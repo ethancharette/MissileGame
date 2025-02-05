@@ -1,16 +1,20 @@
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
 public class HUDManager : MonoBehaviour
 {
     public bool isOn = true;
+    public float alertTime = 2f;
     [SerializeField] TextMeshProUGUI healthText;
     [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] TextMeshProUGUI alertText;
 
     private void Start()
     {
         gameObject.SetActive(isOn);
+        alertText.text = "";
     }
     public void UpdateHealth(int health)
     {
@@ -30,6 +34,18 @@ public class HUDManager : MonoBehaviour
         float seconds = score % 60;
 
         scoreText.text = $"flight time = {hours:00}:{minutes:00}:{seconds:00.00}";
+    }
+
+    public void SetAlert(string alert)
+    {
+        alertText.text = $"ALERT!: {alert} DETECTED";
+        StartCoroutine(ClearAfterSeconds(alertTime));
+    }
+
+    private IEnumerator ClearAfterSeconds(float sec)
+    {
+        yield return new WaitForSeconds(sec);
+        alertText.text = "";
     }
 
     public void ToggleOn(bool on)

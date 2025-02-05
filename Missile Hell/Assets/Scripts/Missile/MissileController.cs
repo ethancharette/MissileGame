@@ -9,6 +9,7 @@ public class MissileController : MonoBehaviour
     [HideInInspector]public Animator animator;
 
     private bool canMove = true;
+    private bool isVisible = true;
 
     private Vector2 direction;
     // Start is called before the first frame update
@@ -20,7 +21,7 @@ public class MissileController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canMove)
+        if (canMove && isVisible)
         {
             direction.x = Input.GetAxis("Horizontal");
             direction.y = Input.GetAxis("Vertical");
@@ -32,10 +33,18 @@ public class MissileController : MonoBehaviour
     public void PlayerDeath()
     {
         canMove = false;
+        SetVisible(false);
     }
 
     public void ResetPlayer()
     {
         canMove = true;
+        SetVisible(true);
+    }
+
+    public void SetVisible(bool visible)
+    {
+        isVisible = visible;
+        body.SetVisible(isVisible);
     }
 }

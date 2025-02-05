@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     #endregion
     #region Variables
     [Header("Screens")]
-    [SerializeField] HUDManager HUD;
+    [SerializeField] public HUDManager HUD;
     [SerializeField] MainMenu MainMenu;
     [SerializeField] GameObject PauseScreen;
 

@@ -47,6 +47,10 @@ public class MissileBody : MonoBehaviour
         missileModel.transform.Rotate(spinspeed * Time.deltaTime);
     }
 
+    public void SetVisible(bool visible)
+    {
+        gameObject.SetActive(visible);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Asteroid"))
