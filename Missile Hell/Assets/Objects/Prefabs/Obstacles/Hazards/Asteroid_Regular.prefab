@@ -9939,9 +9939,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 40
+  damage: 10
   direction: {x: 0, y: 1, z: 0}
   explodesOnCollision: 1
   lifetimeAfterCollision: 0.5
+  collisionSpeedMultiplier: 0.75
   explosionEffect: {fileID: 5071441831987403625}
 --- !u!114 &2433686692994137052
 MonoBehaviour:

@@ -122,6 +122,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &127793353 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4846863398421542032, guid: 04ff4556872183a4ea08c06d2bac13e2, type: 3}
+  m_PrefabInstance: {fileID: 623799925}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &420448884
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,6 +214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HUD: {fileID: 679906079}
   MainMenu: {fileID: 500238529}
+  DeathScreen: {fileID: 623799928}
   PauseScreen: {fileID: 750334488}
   missileController: {fileID: 1628229074}
   maxHealth: 100
@@ -233,6 +245,114 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOpen: 1
+--- !u!1001 &623799925
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2022981315}
+    m_Modifications:
+    - target: {fileID: 677186301872555888, guid: 04ff4556872183a4ea08c06d2bac13e2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 494636640}
+    - target: {fileID: 677186301872555888, guid: 04ff4556872183a4ea08c06d2bac13e2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NewGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 677186301872555888, guid: 04ff4556872183a4ea08c06d2bac13e2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 677186301872555888, guid: 04ff4556872183a4ea08c06d2bac13e2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1486320188045173643, guid: 04ff4556872183a4ea08c06d2bac13e2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1486320188045173643, guid: 04ff4556872183a4ea08c06d2bac13e2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1486320188045173643, guid: 04ff4556872183a4ea08c06d2bac13e2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1486320188045173643, guid: 04ff4556872183a4ea08c06d2bac13e2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1486320188045173643, guid: 04ff4556872183a4ea08c06d2bac13e2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1486320188045173643, guid: 04ff4556872183a4ea08c06d2bac13e2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1486320188045173643, guid: 04ff4556872183a4ea08c06d2bac13e2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1486320188045173643, guid: 04ff4556872183a4ea08c06d2bac13e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1486320188045173643, guid: 04ff4556872183a4ea08c06d2bac13e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1486320188045173643, guid: 04ff4556872183a4ea08c06d2bac13e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3146269885307631584, guid: 04ff4556872183a4ea08c06d2bac13e2, type: 3}
+      propertyPath: m_Name
+      value: DeathScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 7903579339713061899, guid: 04ff4556872183a4ea08c06d2bac13e2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 494636640}
+    - target: {fileID: 7903579339713061899, guid: 04ff4556872183a4ea08c06d2bac13e2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenMenu
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3146269885307631584, guid: 04ff4556872183a4ea08c06d2bac13e2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 623799928}
+  m_SourcePrefab: {fileID: 100100000, guid: 04ff4556872183a4ea08c06d2bac13e2, type: 3}
+--- !u!4 &623799926 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1486320188045173643, guid: 04ff4556872183a4ea08c06d2bac13e2, type: 3}
+  m_PrefabInstance: {fileID: 623799925}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &623799927 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3146269885307631584, guid: 04ff4556872183a4ea08c06d2bac13e2, type: 3}
+  m_PrefabInstance: {fileID: 623799925}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &623799928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623799927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb48b42034dfbde4580179f48da38434, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  statsText: {fileID: 127793353}
 --- !u!4 &679906078 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1130721994927156860, guid: c8e6278e461bf874ba47986861e5a40a, type: 3}
@@ -1170,9 +1290,9 @@ MonoBehaviour:
   explosiveChance: 40
   interactableContainer: {fileID: 1221080973}
   wormHole: {fileID: 609227958356345239, guid: 66c769e6568506b4e9a5dc592ea4e9b3, type: 3}
-  wormholeChance: 30
+  wormholeChance: 33
   spawnRange: 25
-  hazardSpawnRate: 0.4
+  hazardSpawnRate: 0.3
   interactableSpawnRate: 20
 --- !u!4 &1299055580
 Transform:
@@ -1926,6 +2046,7 @@ Transform:
   - {fileID: 500238528}
   - {fileID: 679906078}
   - {fileID: 750334487}
+  - {fileID: 623799926}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807

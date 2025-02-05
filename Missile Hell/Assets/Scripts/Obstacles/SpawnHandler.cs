@@ -76,7 +76,13 @@ public class SpawnHandler : MonoBehaviour
     #endregion
     public void Reset()
     {
+        // Reset Cooldowns / Spawning
         cooldown = hazardSpawnRate;
+        CancelInvoke(methodName: "SpawnInteractable");
+        InvokeRepeating("SpawnInteractable", interactableSpawnRate, interactableSpawnRate);
+        // Reset Pools
+        asteroidPool.ResetPool();
+        asteroidExplosivePool.ResetPool();
     }
 
     private Vector3 RandomInRange()

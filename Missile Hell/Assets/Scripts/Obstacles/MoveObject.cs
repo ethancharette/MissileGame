@@ -4,6 +4,7 @@ using UnityEngine;
 public class MoveObject : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    public float damage = 5f;
     [SerializeField] Vector3 direction = new Vector3(0, 1, 0);
     public bool explodesOnCollision;
     public float lifetimeAfterCollision = 0.5f;
@@ -21,6 +22,11 @@ public class MoveObject : MonoBehaviour
     public void SetDirection(Vector3 dir)
     {
         direction = dir;
+    }
+
+    public void SetDamage(float damage)
+    {
+        this.damage = damage;
     }
     #endregion
 

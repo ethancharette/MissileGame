@@ -55,8 +55,9 @@ public class MissileBody : MonoBehaviour
     {
         if (other.CompareTag("Asteroid"))
         {
-            gm.updatePlayerHealth(gm.asteroidDamage);
-            other.GetComponent<MoveObject>().ExplodeOnCollision();
+            MoveObject m = other.GetComponent<MoveObject>();
+            gm.updatePlayerHealth(m.damage);
+            m.ExplodeOnCollision();
         }
     }
 }

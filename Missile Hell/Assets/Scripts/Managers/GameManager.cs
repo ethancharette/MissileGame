@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
     [Header("Screens")]
     [SerializeField] public HUDManager HUD;
     [SerializeField] MainMenu MainMenu;
+    [SerializeField] DeathScreen DeathScreen;
     [SerializeField] GameObject PauseScreen;
 
     [Header("Player")]
@@ -103,9 +105,11 @@ public class GameManager : MonoBehaviour
     {
         missileController.animator.SetBool("isDying", true);
         missileController.PlayerDeath();
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
         missileController.animator.SetBool("isDying", false);
-        ResetPlayer();
+        // Open Death Screen
+        HUD.ToggleOn(false);
+        OpenDeathScreen();
     }
 
     #endregion
@@ -117,12 +121,20 @@ public class GameManager : MonoBehaviour
         PauseScreen.SetActive(true);
     }
 
+    public void OpenDeathScreen()
+    {
+        PauseGame(true);
+        DeathScreen.SetStatsText(currentScore);
+        DeathScreen.ToggleOn(true);
+    }
+
     #region Buttons
 
     public void NewGame()
     {
-        // Close Menu
-        MainMenu.ToggleMenu(false);
+        // Close All Screens
+        if (MainMenu.isOpen) MainMenu.ToggleMenu(false);
+        if (DeathScreen.isOpen) DeathScreen.ToggleOn(false);
         // Load Game
         PauseGame(false);
         LoadGame();
@@ -134,6 +146,7 @@ public class GameManager : MonoBehaviour
 
         // turn off all other screens
         HUD.ToggleOn(false);
+        DeathScreen.ToggleOn(false);
         PauseScreen.SetActive(false);
 
         // turn menu on
@@ -151,10 +164,6 @@ public class GameManager : MonoBehaviour
     #endregion
     public void LoadGame()
     {
-        // Reset Game Variables
-        currentHealth = maxHealth;
-        currentScore = 0;
-
         // Reset Game Systems
         ResetPlayer();
         Spawner.Reset();

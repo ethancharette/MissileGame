@@ -48,4 +48,12 @@ public class ObjectPool : MonoBehaviour
     {
         obj.SetActive(false);
     }
+
+    public void ResetPool()
+    {
+        foreach (GameObject obj in pool)
+        {
+            ReturnToPool(obj);
+        }
+    }
 }

@@ -11,6 +11,7 @@ public class MissileController : MonoBehaviour
     private bool canMove = true;
     private bool isVisible = true;
 
+    private float height = 100f;
     private Vector2 direction;
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,9 @@ public class MissileController : MonoBehaviour
 
     public void ResetPlayer()
     {
+        transform.position = new Vector3(0f, height, 0f);
+        body.transform.localPosition = Vector3.zero;
+        body.transform.localRotation = Quaternion.identity;
         canMove = true;
         SetVisible(true);
     }
