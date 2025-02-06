@@ -6,15 +6,16 @@ using UnityEngine.EventSystems;
 
 public class MissileBody : MonoBehaviour
 {
+    #region Variables
     public float moveSpeed = 5f;
     public float rotationSpeed = 1.5f;
     public float tiltAngle = 30f;
     public float spinSpeed = 100f;
     private Vector3 spinspeed;
-
+    // Object references
     [SerializeField] GameObject missileModel;
     GameManager gm;
-
+    #endregion
     private void Start()
     {
         // Initialize internal spin vector
@@ -22,7 +23,10 @@ public class MissileBody : MonoBehaviour
 
         gm = GameManager.Instance;
     }
-
+    /// <summary>
+    /// Adjusts the body's transform to Translate in the provided direction input
+    /// </summary>
+    /// <param name="direction"> direction to move </param>
     public void UpdatePosition(Vector2 direction)
     {
         // Set move direction
@@ -38,7 +42,7 @@ public class MissileBody : MonoBehaviour
         {
             // Rotate the missle
             Quaternion rot = Quaternion.Euler(move);
-            // had to get fucky here cause quaternions are weird...
+            // had to get freaky here cause quaternions are weird...
             targetRotation = new Quaternion(-rot.z * tiltAngle, rot.y, rot.x * tiltAngle, rot.w);
         }
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
@@ -46,16 +50,22 @@ public class MissileBody : MonoBehaviour
         // Spin the missle model
         missileModel.transform.Rotate(spinspeed * Time.deltaTime);
     }
-
+    /// <summary>
+    /// Sets the visibility of the body based on passed boolean parameter
+    /// </summary>
+    /// <param name="visible"></param>
     public void SetVisible(bool visible)
     {
         gameObject.SetActive(visible);
     }
+
     private void OnTriggerEnter(Collider other)
     {
+        // When colliding with an asteroid
         if (other.CompareTag("Asteroid"))
         {
-            MoveObject m = other.GetComponent<MoveObject>();
+            // Damage the player based on asteroid damage and explode the asteroid
+            MoveAsteroid m = other.GetComponent<MoveAsteroid>();
             gm.updatePlayerHealth(m.damage);
             m.ExplodeOnCollision();
         }

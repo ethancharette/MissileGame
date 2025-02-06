@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PulseScale : MonoBehaviour
 {
+    #region Variables
     [SerializeField] float pulseMultiplier = 2f;
     [SerializeField] float pulseSpeed = 2f;
 
@@ -12,6 +13,7 @@ public class PulseScale : MonoBehaviour
     private Vector3 startScale;
     private Vector3 endScale;
     private Vector3 targetScale;
+    #endregion
     private void Start()
     {
         startScale = transform.localScale;

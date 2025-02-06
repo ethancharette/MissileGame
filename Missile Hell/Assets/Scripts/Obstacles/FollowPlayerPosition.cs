@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FollowPlayerPosition : MonoBehaviour
 {
-    MissileBody player;
+    private MissileBody player;
 
     private void Start()
     {
@@ -13,7 +13,7 @@ public class FollowPlayerPosition : MonoBehaviour
 
     private void Update()
     {
-        // Follow Player
+        // Follow Player position without changing the height of the object
         transform.position = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class SpawnHandler : MonoBehaviour
 {
+    #region Variables
     public bool on = true;
     [Header("Hazards and Object Pools")]
     [SerializeField] ObjectPool asteroidPool;
@@ -23,11 +24,12 @@ public class SpawnHandler : MonoBehaviour
     private float cooldown;
 
     private MissileBody player;
-
+    #endregion
 
     private void Start()
     {
         player = GameManager.Instance.missileController.body;
+        // Calls "SpawnInteractable" after interactableSpawnRate seconds, and every InteractableSpawnRate seconds.
         InvokeRepeating("SpawnInteractable", interactableSpawnRate, interactableSpawnRate);
     }
 
@@ -49,24 +51,30 @@ public class SpawnHandler : MonoBehaviour
     }
 
     #region Spawning
+    /// <summary>
+    /// Spawns a random hazardous object
+    /// </summary>
     private void SpawnHazard()
     {
-        // Pull from chance pool
+        // Pull from pool by asteroid chance
         ObjectPool pool = Random.Range(0f, 100f) < explosiveChance ? asteroidExplosivePool : asteroidPool;
-        // Get Object
-
+        
+        // Get random spawn position in range
         Vector3 randomOffset = RandomInRange();
-
         Vector3 spawnPosition = transform.position + randomOffset;
 
         // Get and set spawn point
         GameObject asteroid = pool.GetFromPool(spawnPosition);
     }
+    /// <summary>
+    /// Potentially spawns an interactable object on chance.
+    /// </summary>
     private void SpawnInteractable()
     {
         // Try to spawn an interactable obj
         if (Random.Range(0f, 100f) <= wormholeChance)
         {
+            // Alert HUD, Instantiate object at a random spawn location, and store the game object under a container parent
             GameManager.Instance.HUD.SetAlert("ANOMOLY");
             GameObject obj = Instantiate(wormHole, RandomInRange(), Quaternion.identity);
             obj.transform.SetParent(interactableContainer.transform);
@@ -74,6 +82,9 @@ public class SpawnHandler : MonoBehaviour
 
     }
     #endregion
+    /// <summary>
+    /// Resets the spawner to it's initial state
+    /// </summary>
     public void Reset()
     {
         // Reset Cooldowns / Spawning
@@ -84,7 +95,10 @@ public class SpawnHandler : MonoBehaviour
         asteroidPool.ResetPool();
         asteroidExplosivePool.ResetPool();
     }
-
+    /// <summary>
+    /// Returns a random Vector3 in the range of the game object
+    /// </summary>
+    /// <returns></returns>
     private Vector3 RandomInRange()
     {
         Vector3 randomOffset = new Vector3(

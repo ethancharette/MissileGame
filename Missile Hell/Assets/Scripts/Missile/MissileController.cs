@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class MissileController : MonoBehaviour
 {
+    #region Variables
     public MissileBody body;
     [HideInInspector]public Animator animator;
 
@@ -13,15 +14,16 @@ public class MissileController : MonoBehaviour
 
     private float height = 100f;
     private Vector2 direction;
-    // Start is called before the first frame update
+    #endregion
+
     void Start()
     {
         animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        // If applicable, get movement inputs and pass them into the player body
         if (canMove && isVisible)
         {
             direction.x = Input.GetAxis("Horizontal");
@@ -30,13 +32,17 @@ public class MissileController : MonoBehaviour
             body.UpdatePosition(direction);
         }
     }
-
+    /// <summary>
+    /// Hides the player Game Object for Player Death
+    /// </summary>
     public void PlayerDeath()
     {
         canMove = false;
         SetVisible(false);
     }
-
+    /// <summary>
+    /// Resets the player to it's initial position and rotation. Enables movement and visibility
+    /// </summary>
     public void ResetPlayer()
     {
         transform.position = new Vector3(0f, height, 0f);
@@ -45,7 +51,10 @@ public class MissileController : MonoBehaviour
         canMove = true;
         SetVisible(true);
     }
-
+    /// <summary>
+    /// Sets player body visibility based on passed boolean parameter
+    /// </summary>
+    /// <param name="visible"></param>
     public void SetVisible(bool visible)
     {
         isVisible = visible;

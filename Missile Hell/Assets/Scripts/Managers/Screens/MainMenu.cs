@@ -11,13 +11,18 @@ public class MainMenu : MonoBehaviour
     {
         gameObject.SetActive(isOpen);
     }
-
+    /// <summary>
+    /// Toggles the Menu Game Object on/off based on passed boolean
+    /// </summary>
+    /// <param name="on"></param>
     public void ToggleMenu(bool on)
     {
         isOpen = on;
         gameObject.SetActive(isOpen);
     }
-
+    /// <summary>
+    /// Calls "NewGame()" from the GameManager Instance
+    /// </summary>
     public void StartGame()
     {
         GameManager.Instance.NewGame();
