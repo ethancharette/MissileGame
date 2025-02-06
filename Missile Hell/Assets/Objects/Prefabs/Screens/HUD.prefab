@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 6927691783716215192}
   - component: {fileID: 7895561816361366844}
   m_Layer: 0
-  m_Name: Top Background
+  m_Name: Alert Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -708,3 +708,4 @@ MonoBehaviour:
   healthText: {fileID: 1333496772354085139}
   scoreText: {fileID: 1151291396011276692}
   alertText: {fileID: 9088787484376062683}
+  alertBackground: {fileID: 7895561816361366844}

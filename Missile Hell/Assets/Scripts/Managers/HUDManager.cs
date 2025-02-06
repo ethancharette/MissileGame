@@ -2,19 +2,24 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HUDManager : MonoBehaviour
 {
     public bool isOn = true;
     public float alertTime = 2f;
+    [Header("Text")]
     [SerializeField] TextMeshProUGUI healthText;
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] TextMeshProUGUI alertText;
+    [Header("Other Elements")]
+    [SerializeField] Image alertBackground;
 
     private void Start()
     {
         gameObject.SetActive(isOn);
         alertText.text = "";
+        alertBackground.enabled = false;
     }
     public void UpdateHealth(int health)
     {
@@ -38,6 +43,7 @@ public class HUDManager : MonoBehaviour
 
     public void SetAlert(string alert)
     {
+        alertBackground.enabled = true;
         alertText.text = $"ALERT!: {alert} DETECTED";
         StartCoroutine(ClearAfterSeconds(alertTime));
     }
@@ -45,6 +51,7 @@ public class HUDManager : MonoBehaviour
     private IEnumerator ClearAfterSeconds(float sec)
     {
         yield return new WaitForSeconds(sec);
+        alertBackground.enabled = false;
         alertText.text = "";
     }
 
