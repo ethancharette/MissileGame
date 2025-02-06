@@ -9893,7 +9893,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7721353062511304881}
-  - component: {fileID: 6599582527674205989}
+  - component: {fileID: 5295477500662557789}
   - component: {fileID: 2433686692994137052}
   - component: {fileID: 1604631493203647695}
   - component: {fileID: 1128699487275705555}
@@ -9926,7 +9926,7 @@ Transform:
   - {fileID: 8967600623478751254}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6599582527674205989
+--- !u!114 &5295477500662557789
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9935,10 +9935,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1481424810569717156}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22b7509a2ceaa054bbb806676f262a08, type: 3}
+  m_Script: {fileID: 11500000, guid: cdf61ba251ed6164d89535519ff25c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 40
+  moveSpeed: 30
   damage: 10
   direction: {x: 0, y: 1, z: 0}
   explodesOnCollision: 1
@@ -9995,8 +9995,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a9e7f803d895584789b88faa64d09c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleMin: 1
-  scaleMax: 3
+  scaleMin: 0.5
+  scaleMax: 7
 --- !u!135 &935067416693233787
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -222,29 +222,22 @@ MonoBehaviour:
   Spawner: {fileID: 1299055579}
   asteroidDamage: 5
   isPaused: 1
---- !u!1 &500238527 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3679528712463779898, guid: 4ab63d69fea1d0d4c84ef9fadbab91db, type: 3}
-  m_PrefabInstance: {fileID: 799518245}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &500238528 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8213390421780904479, guid: 4ab63d69fea1d0d4c84ef9fadbab91db, type: 3}
   m_PrefabInstance: {fileID: 799518245}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &500238529
+--- !u!114 &500238529 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 5304157081336891198, guid: 4ab63d69fea1d0d4c84ef9fadbab91db, type: 3}
+  m_PrefabInstance: {fileID: 799518245}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 500238527}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ed5e19573357d44baebe798b8e6b2b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOpen: 1
 --- !u!1001 &623799925
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -480,6 +473,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2022981315}
     m_Modifications:
+    - target: {fileID: 100243730552962641, guid: 4ab63d69fea1d0d4c84ef9fadbab91db, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100243730552962641, guid: 4ab63d69fea1d0d4c84ef9fadbab91db, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100243730552962641, guid: 4ab63d69fea1d0d4c84ef9fadbab91db, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 500238529}
+    - target: {fileID: 100243730552962641, guid: 4ab63d69fea1d0d4c84ef9fadbab91db, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100243730552962641, guid: 4ab63d69fea1d0d4c84ef9fadbab91db, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 100243730552962641, guid: 4ab63d69fea1d0d4c84ef9fadbab91db, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MainMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 100243730552962641, guid: 4ab63d69fea1d0d4c84ef9fadbab91db, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3679528712463779898, guid: 4ab63d69fea1d0d4c84ef9fadbab91db, type: 3}
       propertyPath: m_Name
       value: Menu
@@ -524,29 +545,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8658561648282278412, guid: 4ab63d69fea1d0d4c84ef9fadbab91db, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 500238529}
-    - target: {fileID: 8658561648282278412, guid: 4ab63d69fea1d0d4c84ef9fadbab91db, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 8658561648282278412, guid: 4ab63d69fea1d0d4c84ef9fadbab91db, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MainMenu, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8658561648282278412, guid: 4ab63d69fea1d0d4c84ef9fadbab91db, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3679528712463779898, guid: 4ab63d69fea1d0d4c84ef9fadbab91db, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 500238529}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ab63d69fea1d0d4c84ef9fadbab91db, type: 3}
 --- !u!1001 &817352937
 PrefabInstance:
@@ -6137,7 +6139,7 @@ MonoBehaviour:
   explosiveChance: 35
   interactableContainer: {fileID: 1221080973}
   wormHole: {fileID: 609227958356345239, guid: 66c769e6568506b4e9a5dc592ea4e9b3, type: 3}
-  wormholeChance: 20
+  wormholeChance: 100
   spawnRange: 25
   hazardSpawnRate: 0.4
   interactableSpawnRate: 20

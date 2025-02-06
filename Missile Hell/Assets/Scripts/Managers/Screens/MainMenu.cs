@@ -27,4 +27,11 @@ public class MainMenu : MonoBehaviour
     {
         GameManager.Instance.NewGame();
     }
+    /// <summary>
+    /// Quits the application
+    /// </summary>
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

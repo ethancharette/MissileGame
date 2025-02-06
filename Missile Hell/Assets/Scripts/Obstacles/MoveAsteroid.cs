@@ -33,6 +33,8 @@ public class MoveAsteroid : MonoBehaviour
 
     private void Start()
     {
+        // scale damage with scale of object (use x for float instead of vector3, since scale is uniform anyways)
+        damage = damage * transform.lossyScale.x * 0.5f;
         speed = moveSpeed;
     }
     private void Update()
@@ -46,7 +48,12 @@ public class MoveAsteroid : MonoBehaviour
     public void ExplodeOnCollision()
     {
         speed = moveSpeed * collisionSpeedMultiplier;
-        if (explosionEffect != null) explosionEffect.Play();
+        // Move effect to game object and play
+        if (explosionEffect != null)
+        {
+            explosionEffect.gameObject.transform.position = transform.position;
+            explosionEffect.Play();
+        }
 
         // Hide MeshRenderer if this is a rock (child of asteroid)
         if (GetComponent<DestroyAtHeight>() == null)

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1041622070748174072}
   - component: {fileID: 7949190730610174439}
   - component: {fileID: 5867589916262432658}
-  - component: {fileID: 5018756783357946444}
+  - component: {fileID: 1405765127720169147}
   - component: {fileID: 8230190351048886286}
   m_Layer: 0
   m_Name: rock
@@ -135,7 +135,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5018756783357946444
+--- !u!114 &1405765127720169147
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,13 +144,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 8855511768685528}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22b7509a2ceaa054bbb806676f262a08, type: 3}
+  m_Script: {fileID: 11500000, guid: cdf61ba251ed6164d89535519ff25c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  damage: 4
   direction: {x: 0, y: 1, z: 0}
   explodesOnCollision: 1
   lifetimeAfterCollision: 0.5
+  collisionSpeedMultiplier: 0.75
   explosionEffect: {fileID: 6644704084044675366}
 --- !u!114 &8230190351048886286
 MonoBehaviour:
@@ -9922,7 +9924,7 @@ GameObject:
   - component: {fileID: 7195500403769469290}
   - component: {fileID: 8162639103524003098}
   - component: {fileID: 5975457792061693744}
-  - component: {fileID: 768074854307080337}
+  - component: {fileID: 618949178661754080}
   - component: {fileID: 4220979644606979195}
   m_Layer: 0
   m_Name: rock (2)
@@ -10044,7 +10046,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &768074854307080337
+--- !u!114 &618949178661754080
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10053,13 +10055,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1042140610039216080}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22b7509a2ceaa054bbb806676f262a08, type: 3}
+  m_Script: {fileID: 11500000, guid: cdf61ba251ed6164d89535519ff25c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  damage: 4
   direction: {x: 0, y: 1, z: 0}
   explodesOnCollision: 1
   lifetimeAfterCollision: 0.5
+  collisionSpeedMultiplier: 0.75
   explosionEffect: {fileID: 6644704084044675366}
 --- !u!114 &4220979644606979195
 MonoBehaviour:
@@ -10085,7 +10089,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7721353062511304881}
-  - component: {fileID: 6599582527674205989}
+  - component: {fileID: 2110519295524489423}
   - component: {fileID: 2433686692994137052}
   - component: {fileID: 1604631493203647695}
   - component: {fileID: 2599558396597425745}
@@ -10117,7 +10121,7 @@ Transform:
   - {fileID: 5318170633832398524}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6599582527674205989
+--- !u!114 &2110519295524489423
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10126,14 +10130,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1481424810569717156}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22b7509a2ceaa054bbb806676f262a08, type: 3}
+  m_Script: {fileID: 11500000, guid: cdf61ba251ed6164d89535519ff25c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 30
+  moveSpeed: 20
+  damage: 7
   direction: {x: 0, y: 1, z: 0}
   explodesOnCollision: 0
   lifetimeAfterCollision: 0.5
-  explosionEffect: {fileID: 6644704084044675366}
+  collisionSpeedMultiplier: 0.75
+  explosionEffect: {fileID: 0}
 --- !u!114 &2433686692994137052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10184,8 +10190,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a9e7f803d895584789b88faa64d09c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleMin: 1
-  scaleMax: 3
+  scaleMin: 0.5
+  scaleMax: 5
 --- !u!1 &2155605381537415370
 GameObject:
   m_ObjectHideFlags: 0
@@ -10199,7 +10205,7 @@ GameObject:
   - component: {fileID: 3895656349438697272}
   - component: {fileID: 7530664763875778995}
   - component: {fileID: 2322354533303522566}
-  - component: {fileID: 5258877092820375540}
+  - component: {fileID: 1834969185498024282}
   - component: {fileID: 7445427657520756308}
   m_Layer: 0
   m_Name: rock (4)
@@ -10321,7 +10327,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5258877092820375540
+--- !u!114 &1834969185498024282
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10330,13 +10336,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2155605381537415370}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22b7509a2ceaa054bbb806676f262a08, type: 3}
+  m_Script: {fileID: 11500000, guid: cdf61ba251ed6164d89535519ff25c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  damage: 4
   direction: {x: 0, y: 1, z: 0}
   explodesOnCollision: 1
   lifetimeAfterCollision: 0.5
+  collisionSpeedMultiplier: 0.75
   explosionEffect: {fileID: 6644704084044675366}
 --- !u!114 &7445427657520756308
 MonoBehaviour:
@@ -25106,7 +25114,7 @@ GameObject:
   - component: {fileID: 1259097928215045590}
   - component: {fileID: 580044116908810992}
   - component: {fileID: 3760951110632777594}
-  - component: {fileID: 3724508071123179753}
+  - component: {fileID: 5652939110087287066}
   - component: {fileID: 7189102382267920678}
   m_Layer: 0
   m_Name: rock (1)
@@ -25228,7 +25236,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3724508071123179753
+--- !u!114 &5652939110087287066
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -25237,13 +25245,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 5479794434785061486}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22b7509a2ceaa054bbb806676f262a08, type: 3}
+  m_Script: {fileID: 11500000, guid: cdf61ba251ed6164d89535519ff25c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  damage: 4
   direction: {x: 0, y: 1, z: 0}
   explodesOnCollision: 1
   lifetimeAfterCollision: 0.5
+  collisionSpeedMultiplier: 0.75
   explosionEffect: {fileID: 6644704084044675366}
 --- !u!114 &7189102382267920678
 MonoBehaviour:
@@ -35067,7 +35077,7 @@ GameObject:
   - component: {fileID: 7402369178391684295}
   - component: {fileID: 1043663775659496881}
   - component: {fileID: 5858077093083571004}
-  - component: {fileID: 37058429606375579}
+  - component: {fileID: 8984995517864411628}
   - component: {fileID: 5035514773145489626}
   m_Layer: 0
   m_Name: rock (3)
@@ -35189,7 +35199,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &37058429606375579
+--- !u!114 &8984995517864411628
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -35198,13 +35208,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 7323567085324778513}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22b7509a2ceaa054bbb806676f262a08, type: 3}
+  m_Script: {fileID: 11500000, guid: cdf61ba251ed6164d89535519ff25c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  damage: 4
   direction: {x: 0, y: 1, z: 0}
   explodesOnCollision: 1
   lifetimeAfterCollision: 0.5
+  collisionSpeedMultiplier: 0.75
   explosionEffect: {fileID: 6644704084044675366}
 --- !u!114 &5035514773145489626
 MonoBehaviour:
