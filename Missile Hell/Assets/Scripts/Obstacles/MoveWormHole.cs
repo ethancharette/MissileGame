@@ -15,6 +15,8 @@ public class MoveWormHole : MonoBehaviour
     [SerializeField] MeshRenderer body;
     [SerializeField] GameObject destroy;
 
+    private bool canCollide = true;
+
     private void Start()
     {
         speed = moveSpeed;
@@ -27,8 +29,10 @@ public class MoveWormHole : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (canCollide && other.gameObject.CompareTag("Player"))
         {
+            // can collide = false so player cant use this one again
+            canCollide = false;
             // Freeze object
             speed = 0;
             // Hide gameObject components
@@ -40,12 +44,19 @@ public class MoveWormHole : MonoBehaviour
 
     private IEnumerator EffectAfterSeconds()
     {
+        // Play particle
+        if (teleportParticle != null)
+        {
+            teleportParticle.Play();
+        }
+        // Hide Player
         GameManager.Instance.missileController.SetVisible(false);
         yield return new WaitForSeconds(invisibleTime);
         // Show Player
         GameManager.Instance.missileController.SetVisible(true);
         // Play effect
-        if (teleportParticle != null) {
+        if (teleportParticle != null)
+        {
             teleportParticle.Play();
             yield return new WaitForSeconds(teleportParticle.main.duration);
         }

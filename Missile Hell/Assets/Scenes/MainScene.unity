@@ -636,6 +636,10 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5106698074407412539, guid: c8e6278e461bf874ba47986861e5a40a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -24.000092
+      objectReference: {fileID: 0}
     - target: {fileID: 9188034375138661442, guid: c8e6278e461bf874ba47986861e5a40a, type: 3}
       propertyPath: m_Name
       value: HUD
@@ -6130,12 +6134,12 @@ MonoBehaviour:
   on: 1
   asteroidPool: {fileID: 952284718}
   asteroidExplosivePool: {fileID: 1146121087}
-  explosiveChance: 40
+  explosiveChance: 35
   interactableContainer: {fileID: 1221080973}
   wormHole: {fileID: 609227958356345239, guid: 66c769e6568506b4e9a5dc592ea4e9b3, type: 3}
-  wormholeChance: 33
+  wormholeChance: 20
   spawnRange: 25
-  hazardSpawnRate: 0.5
+  hazardSpawnRate: 0.4
   interactableSpawnRate: 20
 --- !u!4 &1299055580
 Transform:
@@ -6567,7 +6571,7 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
-  m_ShadowAngle: 0
+  m_ShadowAngle: 45
 --- !u!4 &1514465963
 Transform:
   m_ObjectHideFlags: 0
@@ -6601,7 +6605,7 @@ MonoBehaviour:
   m_InnerSpotPercent: 0
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
-  m_VolumetricDimmer: 1
+  m_VolumetricDimmer: 11.8
   m_LightUnit: 2
   m_FadeDistance: 10000
   m_VolumetricFadeDistance: 10000
@@ -6625,7 +6629,7 @@ MonoBehaviour:
   m_AreaLightShadowCone: 120
   m_UseScreenSpaceShadows: 0
   m_InteractsWithSky: 1
-  m_AngularDiameter: 0.5
+  m_AngularDiameter: 45
   m_FlareSize: 2
   m_FlareTint: {r: 0.23113209, g: 0.267076, b: 1, a: 1}
   m_FlareFalloff: 4
@@ -6659,7 +6663,7 @@ MonoBehaviour:
     m_UseOverride: 1
     m_Level: 0
   m_ShadowDimmer: 1
-  m_VolumetricShadowDimmer: 1
+  m_VolumetricShadowDimmer: 0.382
   m_ShadowFadeDistance: 10000
   m_UseContactShadow:
     m_Override: 0
