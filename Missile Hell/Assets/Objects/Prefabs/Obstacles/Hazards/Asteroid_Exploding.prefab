@@ -10133,7 +10133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdf61ba251ed6164d89535519ff25c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 20
+  moveSpeed: 30
   damage: 7
   direction: {x: 0, y: 1, z: 0}
   explodesOnCollision: 0
@@ -10152,8 +10152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e792bed5527f0334c9f93347c09ad61c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeedMin: 200
-  rotationSpeedMax: 600
+  rotationSpeedMin: 300
+  rotationSpeedMax: 800
   rotationSpeed: 0
 --- !u!114 &1604631493203647695
 MonoBehaviour:
